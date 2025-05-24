@@ -1,4 +1,4 @@
-import { AppShell, Burger, Box, Text, Loader } from '@mantine/core';
+import { AppShell, Burger, Text, Loader, Stack } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
 import useRentals from '../../hooks/useRentals';
@@ -32,12 +32,12 @@ function Layout() {
         <Text size="xl">Navbar</Text>
       </AppShell.Navbar>
 
-      <AppShell.Main>
+      <AppShell.Main style={{ display: "flex", flexDirection: "column" }}>
         <Text size="xl">Main</Text>
-        <Box p={16}>
-          {isLoading && <Loader type="bars" mx="auto" />}
-          <RentalStack rentals={rentals} />
-        </Box>
+        {isLoading && <Stack justify="center" h={100} flex={1}>
+          <Loader type="bars" mx="auto" />
+        </Stack>}
+        <RentalStack rentals={rentals} />
       </AppShell.Main>
     </AppShell>
   );

@@ -51,7 +51,7 @@ function RentalCard(props: RentalCardProps) {
       </Stack>
 
       {/* Description */}
-      <Text size="sm" mb="md" c="dimmed" truncate="end">
+      <Text size="sm" mb="md" c="dimmed">
         {rental.description}
       </Text>
 
